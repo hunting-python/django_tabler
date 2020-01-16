@@ -1,5 +1,16 @@
 {% extends "base.html" %}
+{% load i18n %}
 
 {% block title %}{{ title }}{% endblock %}
 {% block content %}
+<div class="row">
+    <div class="col-lg-4">
+        <div class="card">
+            <div class="card-body text-center">
+                <h2 class="mb-3">{{ user.first_name }} {{ user.last_name }}</h2>
+                <a href="{% url 'password_change' %}">{% trans 'Change password' %}</a>
+            </div>
+        </div>
+    </div>
+</div>
 {% endblock %}
