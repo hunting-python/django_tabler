@@ -12,6 +12,18 @@
                 {% csrf_token %}
                 <div class="card-body p-6">
                     <div class="card-title">{% trans 'Login to your account' %}</div>
+                    {% if form.errors and not form.non_field_errors %}
+                    <div class="alert alert-danger">
+                        {% if form.errors.items|length == 1 %}{% trans "Please correct the error below." %}{% else %}{% trans "Please correct the errors below." %}{% endif %}
+                    </div>
+                    {% endif %}
+                    {% if form.non_field_errors %}
+                    {% for error in form.non_field_errors %}
+                    <p class="alert alert-danger">
+                        {{ error }}
+                    </p>
+                    {% endfor %}
+                    {% endif %}
                     <div class="form-group">
                         <label class="form-label" for="{{ form.username.id_for_label }}">{{ form.username.label }}</label>
                         {{ form.username }}
