@@ -124,8 +124,5 @@ STATICFILES_DIRS = [
 ]
 LOGOUT_REDIRECT_URL = 'login'
 
-EMAIL_HOST = 'smtp.mailtrap.io'
-EMAIL_HOST_PASSWORD = '2fce5b623616a6'
-EMAIL_HOST_USER = '42fcda06cd5dc7'
-EMAIL_PORT = 2525
+
 EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
