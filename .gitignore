@@ -15,6 +15,7 @@ Thumbs.db
 
 # Aldryn
 /.env
+/*/**/.env
 .aldryn
 /data
 /data.tar.gz
